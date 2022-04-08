@@ -1,5 +1,4 @@
-import { ObjectType, Field, Int } from '@nestjs/graphql';
-import { UserResolver } from '../../user/user.resolver';
+import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
 
 @ObjectType()
 export class Plan {

@@ -17,19 +17,25 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 scalar DateTime
 
 type Plan {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  id: ID!
+  description: String!
+  image: String!
+  url: String!
+  createdAt: DateTime!
+  author: String!
 }
 
 type User {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  id: ID!
+  email: String!
+  password: String!
 }
 
 type Query {
   article(id: Int!): Article!
   plans: [Plan!]!
   plan(id: Int!): Plan!
+  User: [User!]!
   user(id: Int!): User!
 }
 
@@ -68,12 +74,13 @@ input UpdatePlanInput {
 }
 
 input CreateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  id: ID!
+  email: String!
+  password: String!
 }
 
 input UpdateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+  id: ID!
+  email: String!
+  password: String!
 }
