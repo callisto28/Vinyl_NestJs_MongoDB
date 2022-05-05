@@ -1,17 +1,26 @@
-import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
+import { ObjectType, Field, ID } from '@nestjs/graphql';
+import { Schema as MongooseSchema } from 'mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
+@Schema()
 @ObjectType()
 export class Article {
-  @Field(() => ID)
-  id?: string;
-  @Field()
+  @Field(() => String)
+  _id: MongooseSchema.Types.ObjectId;
+  @Prop()
+  @Field(() => String, { description: 'article title' })
   title: string;
-  @Field()
+  @Prop()
+  @Field(() => String, { description: 'article descri^tion' })
   description: string;
-  @Field()
+  @Prop()
+  @Field(() => String, { description: 'article content' })
   content?: string;
-  @Field()
-  createdAt: Date;
-  @Field()
+  @Prop()
+  @Field(() => String, { description: 'article date' })
+  createdAt?: Date;
+  @Prop()
+  @Field(() => String, { description: 'article author' })
   author: string;
 }
+export const ArticleSchema = SchemaFactory.createForClass(Article);

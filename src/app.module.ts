@@ -10,10 +10,14 @@ import { AppService } from './app.service';
 import { ArticleModule } from './article/article.module';
 import { PlansModule } from './plans/plans.module';
 import { UserModule } from './user/user.module';
+// import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
+      buildSchemaOptions: {
+        dateScalarMode: 'isoDate',
+      },
       driver: ApolloDriver,
       playground: false,
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
@@ -24,8 +28,9 @@ import { UserModule } from './user/user.module';
     ArticleModule,
     PlansModule,
     UserModule,
+    // AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}

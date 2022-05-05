@@ -3,18 +3,23 @@
 # ------------------------------------------------------
 
 type Article {
-  id: ID!
+  _id: String!
+
+  """article title"""
   title: String!
+
+  """article descri^tion"""
   description: String!
+
+  """article content"""
   content: String!
-  createdAt: DateTime!
+
+  """article date"""
+  createdAt: String!
+
+  """article author"""
   author: String!
 }
-
-"""
-A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
-"""
-scalar DateTime
 
 type Plan {
   id: ID!
@@ -25,41 +30,56 @@ type Plan {
   author: String!
 }
 
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
 type User {
-  id: ID!
+  _id: String!
+
+  """User email"""
   email: String!
-  password: String!
+
+  """User role"""
+  role: String!
 }
 
 type Query {
-  article(id: Int!): Article!
+  Article: [Article!]!
+  article(id: ID!): Article!
   plans: [Plan!]!
   plan(id: Int!): Plan!
   User: [User!]!
-  user(id: Int!): User!
+  user(id: ID!): User!
 }
 
 type Mutation {
   createArticle(createArticleInput: CreateArticleInput!): Article!
   updateArticle(updateArticleInput: UpdateArticleInput!): Article!
-  removeArticle(id: Int!): Article!
+  removeArticle(id: ID!): Article!
   createPlan(createPlanInput: CreatePlanInput!): Plan!
   updatePlan(updatePlanInput: UpdatePlanInput!): Plan!
   removePlan(id: Int!): Plan!
   createUser(createUserInput: CreateUserInput!): User!
   updateUser(updateUserInput: UpdateUserInput!): User!
-  removeUser(id: Int!): User!
+  removeUser(id: ID!): User!
 }
 
 input CreateArticleInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  title: String!
+  description: String!
+  content: String!
+  author: String!
 }
 
 input UpdateArticleInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+  title: String!
+  description: String!
+  content: String!
+  author: String!
+  id: ID!
+  createdAt: DateTime!
 }
 
 input CreatePlanInput {
@@ -74,13 +94,21 @@ input UpdatePlanInput {
 }
 
 input CreateUserInput {
-  id: ID!
+  """email of the user"""
   email: String!
+
+  """role of the user"""
+  role: String!
+
+  """password of the user"""
   password: String!
 }
 
 input UpdateUserInput {
-  id: ID!
   email: String!
+
+  """role of the user"""
+  role: String
   password: String!
+  id: ID!
 }

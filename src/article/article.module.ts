@@ -10,4 +10,4 @@ import { ArticleSchema } from 'src/schema/article.schema';
   ],
   providers: [ArticleResolver, ArticleService],
 })
-export class ArticleModule { }
+export class ArticleModule {}
