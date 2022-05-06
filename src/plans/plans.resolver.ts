@@ -1,8 +1,9 @@
-import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args, ID } from '@nestjs/graphql';
 import { PlansService } from './plans.service';
 import { Plan } from './entities/plan.entity';
 import { CreatePlanInput } from './dto/create-plan.input';
 import { UpdatePlanInput } from './dto/update-plan.input';
+import { IPlan } from '../types';
 
 @Resolver(() => Plan)
 export class PlansResolver {
@@ -13,13 +14,13 @@ export class PlansResolver {
     return this.plansService.create(createPlanInput);
   }
 
-  @Query(() => [Plan], { name: 'plans' })
-  findAll() {
+  @Query(() => [Plan])
+  async Plans(): Promise<IPlan[]> {
     return this.plansService.findAll();
   }
 
   @Query(() => Plan, { name: 'plan' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
+  findOne(@Args('id', { type: () => ID }) id: string) {
     return this.plansService.findOne(id);
   }
 
@@ -29,7 +30,7 @@ export class PlansResolver {
   }
 
   @Mutation(() => Plan)
-  removePlan(@Args('id', { type: () => Int }) id: number) {
-    return this.plansService.remove(id);
+  removePlan(@Args('id', { type: () => ID }) id: string) {
+    return this.plansService.delete(id);
   }
 }

@@ -11,14 +11,14 @@ export class Article {
   @Field(() => String, { description: 'article title' })
   title: string;
   @Prop()
-  @Field(() => String, { description: 'article descri^tion' })
+  @Field(() => String, { description: 'article description' })
   description: string;
   @Prop()
   @Field(() => String, { description: 'article content' })
   content?: string;
-  @Prop()
+  @Prop({ type: Date, default: Date.now })
   @Field(() => String, { description: 'article date' })
-  createdAt?: Date;
+  createdAt!: Date;
   @Prop()
   @Field(() => String, { description: 'article author' })
   author: string;

@@ -1,17 +1,16 @@
 /* eslint-disable prettier/prettier */
 import { InputType, Field, ID } from '@nestjs/graphql';
 
-
 @InputType()
-export class CreateArticleInput { 
+export class CreateArticleInput {
   @Field()
   readonly title: string;
   @Field()
   readonly description: string;
   @Field()
   readonly content!: string;
-   @Field()
+  // @Field(() => Date)
+  // readonly createdAt!: Date;
+  @Field()
   readonly author: string;
-  
- 
 }

@@ -4,6 +4,6 @@ export const ArticleSchema = new mongoose.Schema({
   title: String,
   description: String,
   content: String,
-  createdAt: Date,
+  createdAt: { type: Date, default: Date.now },
   author: String,
 });

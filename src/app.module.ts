@@ -16,7 +16,7 @@ import { UserModule } from './user/user.module';
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       buildSchemaOptions: {
-        dateScalarMode: 'isoDate',
+        dateScalarMode: 'timestamp',
       },
       driver: ApolloDriver,
       playground: false,

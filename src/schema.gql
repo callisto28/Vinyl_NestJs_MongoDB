@@ -8,7 +8,7 @@ type Article {
   """article title"""
   title: String!
 
-  """article descri^tion"""
+  """article description"""
   description: String!
 
   """article content"""
@@ -22,18 +22,26 @@ type Article {
 }
 
 type Plan {
-  id: ID!
+  _id: String!
+
+  """plan title"""
+  title: String!
+
+  """plan description"""
   description: String!
+
+  """plan image"""
   image: String!
+
+  """plan url"""
   url: String!
-  createdAt: DateTime!
+
+  """plan date"""
+  createdAt: String!
+
+  """plan author"""
   author: String!
 }
-
-"""
-A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
-"""
-scalar DateTime
 
 type User {
   _id: String!
@@ -48,8 +56,8 @@ type User {
 type Query {
   Article: [Article!]!
   article(id: ID!): Article!
-  plans: [Plan!]!
-  plan(id: Int!): Plan!
+  Plans: [Plan!]!
+  plan(id: ID!): Plan!
   User: [User!]!
   user(id: ID!): User!
 }
@@ -60,7 +68,7 @@ type Mutation {
   removeArticle(id: ID!): Article!
   createPlan(createPlanInput: CreatePlanInput!): Plan!
   updatePlan(updatePlanInput: UpdatePlanInput!): Plan!
-  removePlan(id: Int!): Plan!
+  removePlan(id: ID!): Plan!
   createUser(createUserInput: CreateUserInput!): User!
   updateUser(updateUserInput: UpdateUserInput!): User!
   removeUser(id: ID!): User!
@@ -79,18 +87,30 @@ input UpdateArticleInput {
   content: String!
   author: String!
   id: ID!
-  createdAt: DateTime!
+  createdAt: Timestamp!
 }
 
+"""
+`Date` type as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.
+"""
+scalar Timestamp
+
 input CreatePlanInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  title: String!
+  description: String!
+  image: String!
+  url: String!
+  author: String!
 }
 
 input UpdatePlanInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+  title: String!
+  description: String!
+  image: String!
+  url: String!
+  author: String!
+  id: ID!
+  createdAt: Timestamp!
 }
 
 input CreateUserInput {
