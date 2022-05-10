@@ -22,8 +22,8 @@ export class UserService {
     return await this.userModel.find().exec();
   }
   // perhaps change findById to findOne
-  async findOne(id: string): Promise<IUser> {
-    return await this.userModel.findById(id);
+  async findOne(email: string): Promise<IUser> {
+    return await this.userModel.findOne({ email });
   }
 
   async update(id: string, updateUserInput: UpdateUserInput): Promise<IUser> {

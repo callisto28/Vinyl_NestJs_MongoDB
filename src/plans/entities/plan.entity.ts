@@ -24,7 +24,7 @@ export class Plan {
   createdAt!: Date;
   @Prop()
   @Field(() => String, { description: 'plan author' })
-  author: string;
+  author: string | null;
 }
 
 export const ArticleSchema = SchemaFactory.createForClass(Plan);

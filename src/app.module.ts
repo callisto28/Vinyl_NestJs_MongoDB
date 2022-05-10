@@ -10,7 +10,7 @@ import { AppService } from './app.service';
 import { ArticleModule } from './article/article.module';
 import { PlansModule } from './plans/plans.module';
 import { UserModule } from './user/user.module';
-// import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -28,7 +28,7 @@ import { UserModule } from './user/user.module';
     ArticleModule,
     PlansModule,
     UserModule,
-    // AuthModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

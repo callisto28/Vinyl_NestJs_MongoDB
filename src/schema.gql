@@ -53,6 +53,11 @@ type User {
   role: String!
 }
 
+type LoginResponse {
+  """Generated access_token of the user"""
+  access_token: String!
+}
+
 type Query {
   Article: [Article!]!
   article(id: ID!): Article!
@@ -72,6 +77,7 @@ type Mutation {
   createUser(createUserInput: CreateUserInput!): User!
   updateUser(updateUserInput: UpdateUserInput!): User!
   removeUser(id: ID!): User!
+  login(body: LoginUserInput!): LoginResponse!
 }
 
 input CreateArticleInput {
@@ -131,4 +137,12 @@ input UpdateUserInput {
   role: String
   password: String!
   id: ID!
+}
+
+input LoginUserInput {
+  """email of the user"""
+  email: String!
+
+  """password of the user"""
+  password: String!
 }
