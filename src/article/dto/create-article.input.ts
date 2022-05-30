@@ -8,7 +8,13 @@ export class CreateArticleInput {
   @Field()
   readonly description: string;
   @Field()
-  readonly content!: string;
+  readonly subtitle: string;
+  @Field()
+  readonly contentA: string;
+  @Field()
+  readonly contentB: string;
+  @Field()
+  readonly contentC: string;
   // @Field(() => Date)
   // readonly createdAt!: Date;
   @Field()

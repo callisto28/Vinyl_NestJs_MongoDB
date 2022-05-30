@@ -9,13 +9,20 @@ export class Article {
   _id: MongooseSchema.Types.ObjectId;
   @Prop()
   @Field(() => String, { description: 'article title' })
-  title: string;
+  title!: string;
   @Prop()
   @Field(() => String, { description: 'article description' })
-  description: string;
+  description!: string;
   @Prop()
-  @Field(() => String, { description: 'article content' })
-  content?: string;
+  @Field(() => String, { description: 'article subtitle' })
+  subtitle: string;
+  @Prop()
+  @Field(() => String, { description: 'article contentA' })
+  contentA: string;
+  @Field(() => String, { description: 'article contentB' })
+  contentB: string;
+  @Field(() => String, { description: 'article contentC' })
+  contentC: string;
   @Prop({ type: Date, default: Date.now })
   @Field(() => String, { description: 'article date' })
   createdAt!: Date;
@@ -23,4 +30,5 @@ export class Article {
   @Field(() => String, { description: 'article author' })
   author: string;
 }
+
 export const ArticleSchema = SchemaFactory.createForClass(Article);

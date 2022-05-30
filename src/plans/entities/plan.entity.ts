@@ -7,16 +7,16 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 export class Plan {
   @Field(() => String)
   _id: MongooseSchema.Types.ObjectId;
-  @Prop()
+  @Prop({ type: String })
   @Field(() => String, { description: 'plan title' })
   title: string;
-  @Prop()
+  @Prop({ type: String })
   @Field(() => String, { description: 'plan description' })
   description: string;
-  @Prop()
+  @Prop({ type: String })
   @Field(() => String, { description: 'plan image' })
   image?: string;
-  @Prop()
+  @Prop({ type: String })
   @Field(() => String, { description: 'plan url' })
   url?: string;
   @Prop({ type: Date, default: Date.now })
@@ -27,4 +27,4 @@ export class Plan {
   author: string | null;
 }
 
-export const ArticleSchema = SchemaFactory.createForClass(Plan);
+export const PlanSchema = SchemaFactory.createForClass(Plan);

@@ -11,8 +11,17 @@ type Article {
   """article description"""
   description: String!
 
-  """article content"""
-  content: String!
+  """article subtitle"""
+  subtitle: String!
+
+  """article contentA"""
+  contentA: String!
+
+  """article contentB"""
+  contentB: String!
+
+  """article contentC"""
+  contentC: String!
 
   """article date"""
   createdAt: String!
@@ -83,23 +92,23 @@ type Mutation {
 input CreateArticleInput {
   title: String!
   description: String!
-  content: String!
+  subtitle: String!
+  contentA: String!
+  contentB: String!
+  contentC: String!
   author: String!
 }
 
 input UpdateArticleInput {
   title: String!
   description: String!
-  content: String!
+  subtitle: String!
+  contentA: String!
+  contentB: String!
+  contentC: String!
   author: String!
   id: ID!
-  createdAt: Timestamp!
 }
-
-"""
-`Date` type as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.
-"""
-scalar Timestamp
 
 input CreatePlanInput {
   title: String!
@@ -118,6 +127,11 @@ input UpdatePlanInput {
   id: ID!
   createdAt: Timestamp!
 }
+
+"""
+`Date` type as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.
+"""
+scalar Timestamp
 
 input CreateUserInput {
   """email of the user"""

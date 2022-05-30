@@ -10,9 +10,15 @@ export class UpdateArticleInput extends PartialType(CreateArticleInput) {
   @Field()
   description: string;
   @Field()
-  content!: string;
+  subtitle: string;
   @Field()
-  createdAt!: Date;
+  contentA: string;
+  @Field()
+  contentB: string;
+  @Field()
+  contentC: string;
+  // @Field()
+  // createdAt!: Date;
   @Field()
   author!: string;
 }
