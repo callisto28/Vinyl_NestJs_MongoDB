@@ -8,6 +8,8 @@ export class CreateArticleInput {
   @Field()
   readonly description: string;
   @Field()
+  readonly image?: string;
+  @Field()
   readonly subtitle: string;
   @Field()
   readonly contentA: string;
@@ -15,6 +17,14 @@ export class CreateArticleInput {
   readonly contentB: string;
   @Field()
   readonly contentC: string;
+  @Field()
+  readonly contentD: string;
+  @Field()
+  readonly contentE: string;
+  @Field()
+  readonly contentF: string;
+  @Field()
+  readonly url?: string;
   // @Field(() => Date)
   // readonly createdAt!: Date;
   @Field()

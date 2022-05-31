@@ -10,6 +10,8 @@ export class UpdateArticleInput extends PartialType(CreateArticleInput) {
   @Field()
   description: string;
   @Field()
+  image?: string;
+  @Field()
   subtitle: string;
   @Field()
   contentA: string;
@@ -17,6 +19,14 @@ export class UpdateArticleInput extends PartialType(CreateArticleInput) {
   contentB: string;
   @Field()
   contentC: string;
+  @Field()
+  contentD: string;
+  @Field()
+  contentE: string;
+  @Field()
+  contentF: string;
+  @Field()
+  url?: string;
   // @Field()
   // createdAt!: Date;
   @Field()

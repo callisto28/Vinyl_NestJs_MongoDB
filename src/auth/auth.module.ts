@@ -15,7 +15,7 @@ import { AuthResolver } from './auth.resolver';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
         secret: configService.get<string>('JWT_SECRET'),
-        signOptions: { expiresIn: '60s' },
+        signOptions: { expiresIn: '80s' },
       }),
       inject: [ConfigService],
     }),

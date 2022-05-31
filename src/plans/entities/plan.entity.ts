@@ -19,6 +19,12 @@ export class Plan {
   @Prop({ type: String })
   @Field(() => String, { description: 'plan url' })
   url?: string;
+  @Prop({ type: String })
+  @Field(() => Number, { description: 'plan price' })
+  price?: number;
+  @Prop({ type: String })
+  @Field(() => String, { description: 'plan seller' })
+  seller?: string;
   @Prop({ type: Date, default: Date.now })
   @Field(() => String, { description: 'plan date' })
   createdAt!: Date;
