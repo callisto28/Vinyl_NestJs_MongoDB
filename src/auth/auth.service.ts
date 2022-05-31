@@ -1,18 +1,8 @@
-import {
-  Injectable,
-  forwardRef,
-  Inject,
-  BadRequestException,
-} from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { UserService } from '../user/user.service';
 import { User, UserDocument } from '../user/entities/user.entity';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
-import { LoginUserInput } from 'src/auth/dto/login-user.input';
-import { IUser } from 'src/types';
-import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
-import { LoginResponse } from './dto/login-response';
 
 export interface JWTPayload {
   email: string;

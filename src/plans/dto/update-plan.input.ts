@@ -14,6 +14,10 @@ export class UpdatePlanInput extends PartialType(CreatePlanInput) {
   @Field()
   url: string;
   @Field()
+  price: number;
+  @Field()
+  seller: string;
+  @Field()
   createdAt: Date;
   @Field()
   author: string;

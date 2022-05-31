@@ -10,6 +10,10 @@ export class CreatePlanInput {
   readonly image: string;
   @Field()
   readonly url: string;
+  @Field()
+  readonly price: number;
+  @Field()
+  readonly seller: string;
   // @Field(() => Date)
   // createdAt?: Date;
   @Field()

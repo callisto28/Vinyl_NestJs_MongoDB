@@ -5,6 +5,8 @@ export const PlanSchema = new mongoose.Schema({
   description: String,
   image: String,
   url: String,
+  price: Number,
+  seller: String,
   createdAt: { type: Date, default: Date.now },
   author: String,
 });

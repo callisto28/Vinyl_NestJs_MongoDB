@@ -8,6 +8,9 @@ type Article {
   """article title"""
   title: String!
 
+  """article image"""
+  image: String!
+
   """article description"""
   description: String!
 
@@ -22,6 +25,18 @@ type Article {
 
   """article contentC"""
   contentC: String!
+
+  """article contentD"""
+  contentD: String!
+
+  """article contentE"""
+  contentE: String!
+
+  """article contentF"""
+  contentF: String!
+
+  """article url"""
+  url: String!
 
   """article date"""
   createdAt: String!
@@ -44,6 +59,12 @@ type Plan {
 
   """plan url"""
   url: String!
+
+  """plan price"""
+  price: Float!
+
+  """plan seller"""
+  seller: String!
 
   """plan date"""
   createdAt: String!
@@ -92,20 +113,30 @@ type Mutation {
 input CreateArticleInput {
   title: String!
   description: String!
+  image: String!
   subtitle: String!
   contentA: String!
   contentB: String!
   contentC: String!
+  contentD: String!
+  contentE: String!
+  contentF: String!
+  url: String!
   author: String!
 }
 
 input UpdateArticleInput {
   title: String!
   description: String!
+  image: String!
   subtitle: String!
   contentA: String!
   contentB: String!
   contentC: String!
+  contentD: String!
+  contentE: String!
+  contentF: String!
+  url: String!
   author: String!
   id: ID!
 }
@@ -115,6 +146,8 @@ input CreatePlanInput {
   description: String!
   image: String!
   url: String!
+  price: Float!
+  seller: String!
   author: String!
 }
 
@@ -123,6 +156,8 @@ input UpdatePlanInput {
   description: String!
   image: String!
   url: String!
+  price: Float!
+  seller: String!
   author: String!
   id: ID!
   createdAt: Timestamp!
