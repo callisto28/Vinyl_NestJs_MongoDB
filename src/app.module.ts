@@ -11,6 +11,9 @@ import { ArticleModule } from './article/article.module';
 import { PlansModule } from './plans/plans.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
+import { VinylModule } from './vinyl/vinyl.module';
+import { MaterialModule } from './material/material.module';
+import { DeskModule } from './desk/desk.module';
 
 @Module({
   imports: [
@@ -29,6 +32,9 @@ import { AuthModule } from './auth/auth.module';
     PlansModule,
     UserModule,
     AuthModule,
+    VinylModule,
+    MaterialModule,
+    DeskModule,
   ],
   controllers: [AppController],
   providers: [AppService],
