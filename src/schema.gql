@@ -88,6 +88,53 @@ type LoginResponse {
   access_token: String!
 }
 
+type Vinyl {
+  _id: ID!
+  createdAt: Timestamp!
+  updatedAt: Timestamp!
+  title: String!
+  description: String!
+  image: String
+  referral_url: String
+  price: Float!
+  seller: String!
+  author: String!
+  featured: Boolean!
+}
+
+"""
+`Date` type as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.
+"""
+scalar Timestamp
+
+type Material {
+  _id: ID!
+  createdAt: Timestamp!
+  updatedAt: Timestamp!
+  title: String!
+  description: String!
+  image: String
+  referral_url: String
+  price: Float!
+  seller: String!
+  author: String!
+  featured: Boolean!
+}
+
+type Desk {
+  _id: ID!
+  createdAt: Timestamp!
+  updatedAt: Timestamp!
+  title: String!
+  description: String!
+  image: String
+  referral_url: String
+  price: Float!
+  seller: String!
+  author: String!
+  featured: Boolean!
+}
+
 type Query {
   Article: [Article!]!
   article(id: ID!): Article!
@@ -95,6 +142,9 @@ type Query {
   plan(id: ID!): Plan!
   User: [User!]!
   user(id: ID!): User!
+  getVinylFeatured: [Vinyl!]!
+  getMaterialFeatured: [Material!]!
+  getDeskFeatured: [Desk!]!
 }
 
 type Mutation {
@@ -108,6 +158,9 @@ type Mutation {
   updateUser(updateUserInput: UpdateUserInput!): User!
   removeUser(id: ID!): User!
   login(body: LoginUserInput!): LoginResponse!
+  createVinyl(input: CreateVinylInput!): Vinyl!
+  createMaterial(input: CreateMaterialInput!): Material!
+  createDesk(input: CreateDeskInput!): Desk!
 }
 
 input CreateArticleInput {
@@ -163,11 +216,6 @@ input UpdatePlanInput {
   createdAt: Timestamp!
 }
 
-"""
-`Date` type as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.
-"""
-scalar Timestamp
-
 input CreateUserInput {
   """email of the user"""
   email: String!
@@ -194,4 +242,37 @@ input LoginUserInput {
 
   """password of the user"""
   password: String!
+}
+
+input CreateVinylInput {
+  title: String!
+  description: String!
+  image: String
+  referral_url: String
+  price: Float!
+  seller: String!
+  author: String!
+  featured: Boolean = false
+}
+
+input CreateMaterialInput {
+  title: String!
+  description: String!
+  image: String
+  referral_url: String
+  price: Float!
+  seller: String!
+  author: String!
+  featured: Boolean = false
+}
+
+input CreateDeskInput {
+  title: String!
+  description: String!
+  image: String
+  referral_url: String
+  price: Float!
+  seller: String!
+  author: String!
+  featured: Boolean = false
 }

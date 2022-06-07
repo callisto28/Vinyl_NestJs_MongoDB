@@ -4,6 +4,10 @@ import { Plan } from './entities/plan.entity';
 import { CreatePlanInput } from './dto/create-plan.input';
 import { UpdatePlanInput } from './dto/update-plan.input';
 import { IPlan } from '../types';
+// import { ProductUnion, TYPE_PRODUCT } from './enums';
+import { CreateVinylInput } from 'src/vinyl/inputs';
+import { CreateMaterialInput } from 'src/material/inputs';
+import { CreateProductDto } from './dto/create-product.dto';
 
 @Resolver(() => Plan)
 export class PlansResolver {
@@ -33,4 +37,15 @@ export class PlansResolver {
   removePlan(@Args('id', { type: () => ID }) id: string) {
     return this.plansService.delete(id);
   }
+  //
+  // @Mutation(() => ProductUnion)
+  // createProduct(@Args('input') args: CreateProductDto) {
+  //   switch (args.type) {
+  // case TYPE_PRODUCT.MATERIAL:
+  //       return 'mat';
+
+  //     default:
+  //       return 'false';
+  //   }
+  // }
 }

@@ -10,8 +10,8 @@ export class Article {
   @Prop({ type: String, required: true })
   @Field(() => String, { description: 'article title' })
   title!: string;
-  @Prop({ type: String, required: false })
-  @Field(() => String, { description: 'article image' })
+  @Prop({ required: false })
+  @Field({ nullable: true })
   image: string;
   @Prop({ type: String, required: true })
   @Field(() => String, { description: 'article description' })
