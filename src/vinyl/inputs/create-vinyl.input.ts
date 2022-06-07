@@ -14,7 +14,7 @@ export class CreateVinylInput {
   @Field({ nullable: true })
   referral_url: string;
 
-  @Field(() => Float)
+  @Field()
   price: number;
 
   @Field()
@@ -23,6 +23,6 @@ export class CreateVinylInput {
   @Field()
   author: string;
 
-  @Field({ defaultValue: false })
+  @Field({ defaultValue: true })
   featured: boolean;
 }

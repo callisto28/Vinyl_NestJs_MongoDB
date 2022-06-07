@@ -21,8 +21,8 @@ export class Vinyl extends AbstractDocument {
   @Field({ nullable: true })
   referral_url: string;
 
-  @Prop()
-  @Field(() => Float)
+  @Prop({ required: false })
+  @Field()
   price: number;
 
   @Prop()
@@ -33,8 +33,8 @@ export class Vinyl extends AbstractDocument {
   @Field()
   author: string;
 
-  @Prop({ default: false })
-  @Field({ defaultValue: false })
+  @Prop({ default: true })
+  @Field({ defaultValue: true })
   featured: boolean;
 }
 

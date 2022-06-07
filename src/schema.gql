@@ -250,7 +250,7 @@ input CreateVinylInput {
   price: Float!
   seller: String!
   author: String!
-  featured: Boolean = false
+  featured: Boolean = true
 }
 
 input CreateMaterialInput {
@@ -261,7 +261,7 @@ input CreateMaterialInput {
   price: Float!
   seller: String!
   author: String!
-  featured: Boolean = false
+  featured: Boolean = true
 }
 
 input CreateDeskInput {
@@ -272,5 +272,5 @@ input CreateDeskInput {
   price: Float!
   seller: String!
   author: String!
-  featured: Boolean = false
+  featured: Boolean = true
 }
