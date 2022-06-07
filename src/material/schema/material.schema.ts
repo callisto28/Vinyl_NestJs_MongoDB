@@ -22,8 +22,8 @@ export class Material extends AbstractDocument {
   @Field({ nullable: true })
   referral_url: string;
 
-  @Prop({ required: false })
-  @Field()
+  @Prop()
+  @Field(() => Float)
   price: number;
 
   @Prop()
@@ -34,8 +34,8 @@ export class Material extends AbstractDocument {
   @Field()
   author: string;
 
-  @Prop({ default: true })
-  @Field({ defaultValue: true })
+  @Prop({ default: false })
+  @Field({ defaultValue: false })
   featured: boolean;
 }
 

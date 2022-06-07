@@ -14,7 +14,7 @@ export class CreateDeskInput {
   @Field({ nullable: true })
   referral_url: string;
 
-  @Field()
+  @Field(() => Float)
   price: number;
 
   @Field()
@@ -23,6 +23,6 @@ export class CreateDeskInput {
   @Field()
   author: string;
 
-  @Field({ defaultValue: true })
+  @Field({ defaultValue: false })
   featured: boolean;
 }
