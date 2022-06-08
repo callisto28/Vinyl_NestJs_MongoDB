@@ -141,8 +141,11 @@ type Query {
   User: [User!]!
   user(id: ID!): User!
   getVinylFeatured: [Vinyl!]!
+  vinyl(id: String!): Vinyl!
   getMaterialFeatured: [Material!]!
+  material(id: String!): Material!
   getDeskFeatured: [Desk!]!
+  desk(id: String!): Desk!
 }
 
 type Mutation {

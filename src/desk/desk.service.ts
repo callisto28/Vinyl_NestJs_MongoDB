@@ -13,6 +13,10 @@ export class DeskService {
       ...createDeskInput,
     });
   }
+  public async findOne(id: string) {
+    return this.deskModel.findById(id);
+  }
+
   public async findbyFeatured() {
     return this.deskModel.find({ featured: true }, undefined, { lean: true });
   }

@@ -13,6 +13,9 @@ export class VinylService {
       ...createVinylInput,
     });
   }
+  public async findOne(id: string) {
+    return this.vinylModel.findById(id);
+  }
 
   public async findbyFeatured() {
     return this.vinylModel.find({ featured: true }, undefined, { lean: true });

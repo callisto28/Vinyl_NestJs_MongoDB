@@ -15,6 +15,9 @@ export class MaterialService {
       ...createMaterialInput,
     });
   }
+  public async findOne(id: string) {
+    return this.materialModel.findById(id);
+  }
 
   public async findbyFeatured() {
     return this.materialModel.find({ featured: true }, undefined, {

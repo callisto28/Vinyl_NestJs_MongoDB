@@ -11,6 +11,11 @@ export class DeskResolvers {
   public async getDeskFeatured() {
     return this.deskService.findbyFeatured();
   }
+  @Query(() => Desk, { name: 'desk' })
+  public async getDesk(@Args('id', { type: () => String }) id: string) {
+    return this.deskService.findOne(id);
+  }
+
   @Mutation(() => Desk)
   public async createDesk(@Args('input') input: CreateDeskInput) {
     return this.deskService.create(input);

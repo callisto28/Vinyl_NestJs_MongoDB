@@ -12,6 +12,11 @@ export class VinylResolver {
     return this.vinylService.findbyFeatured();
   }
 
+  @Query(() => Vinyl, { name: 'vinyl' })
+  public async getVinyl(@Args('id', { type: () => String }) id: string) {
+    return this.vinylService.findOne(id);
+  }
+
   @Mutation(() => Vinyl)
   public async createVinyl(@Args('input') input: CreateVinylInput) {
     return this.vinylService.create(input);

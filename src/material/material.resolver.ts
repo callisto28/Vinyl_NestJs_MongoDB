@@ -12,6 +12,11 @@ export class MaterialResolver {
     return this.materialService.findbyFeatured();
   }
 
+  @Query(() => Material, { name: 'material' })
+  public async getMaterial(@Args('id', { type: () => String }) id: string) {
+    return this.materialService.findOne(id);
+  }
+
   @Mutation(() => Material)
   public async createMaterial(@Args('input') input: CreateMaterialInput) {
     return this.materialService.create(input);
