@@ -20,4 +20,11 @@ export class VinylService {
   public async findbyFeatured() {
     return this.vinylModel.find({ featured: true }, undefined, { lean: true });
   }
+
+  public async update(id: string, updateVinylInput: Vinyl) {
+    return this.vinylModel.findByIdAndUpdate(id, updateVinylInput, {
+      ...updateVinylInput,
+      new: true,
+    });
+  }
 }

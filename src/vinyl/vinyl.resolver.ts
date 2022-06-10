@@ -1,5 +1,6 @@
 import { Args, Mutation, Resolver, Query } from '@nestjs/graphql';
 import { CreateVinylInput } from './inputs';
+import { UpdateVinylInput } from './inputs/update-vinyl.input';
 import { Vinyl } from './schema/vinyl.schema';
 import { VinylService } from './vinyl.service';
 
@@ -20,5 +21,9 @@ export class VinylResolver {
   @Mutation(() => Vinyl)
   public async createVinyl(@Args('input') input: CreateVinylInput) {
     return this.vinylService.create(input);
+  }
+  @Mutation(() => Vinyl)
+  updateVinyl(@Args('updateVinyl') updateVinylInput: UpdateVinylInput) {
+    return this.vinylService.update(updateVinylInput._id, updateVinylInput);
   }
 }

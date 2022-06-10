@@ -1,40 +1,31 @@
-import { Field, Float, InputType } from '@nestjs/graphql';
+import { Field, Float, ID, InputType } from '@nestjs/graphql';
 
 @InputType()
-export class CreateVinylInput {
-  @Field()
+export class UpdateVinylInput {
+  @Field(() => ID)
+  _id: string;
+  @Field({ nullable: true })
   title: string;
-
   @Field({ nullable: true })
   subtitle: string;
-
-  @Field()
+  @Field({ nullable: true })
   description: string;
-
   @Field({ nullable: true })
   image: string;
-
   @Field({ nullable: true })
   referral_url: string;
-
   @Field(() => Float, { nullable: true })
   priceEur: number;
-
   @Field(() => Float, { nullable: true })
   priceUSD: number;
-
   @Field({ nullable: true })
   label: string;
-
   @Field({ nullable: true })
   genre: string;
-
-  @Field()
+  @Field({ nullable: true })
   seller: string;
-
-  @Field()
+  @Field({ nullable: true })
   author: string;
-
-  @Field({ defaultValue: false })
+  @Field({ defaultValue: true })
   featured: boolean;
 }

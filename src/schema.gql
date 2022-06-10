@@ -91,10 +91,14 @@ type Vinyl {
   createdAt: Timestamp!
   updatedAt: Timestamp!
   title: String!
+  subtitle: String
   description: String!
   image: String
   referral_url: String
-  price: Float!
+  priceEur: Float
+  priceUSD: Float
+  label: String
+  genre: String
   seller: String!
   author: String!
   featured: Boolean!
@@ -160,6 +164,7 @@ type Mutation {
   removeUser(id: ID!): User!
   login(body: LoginUserInput!): LoginResponse!
   createVinyl(input: CreateVinylInput!): Vinyl!
+  updateVinyl(updateVinyl: UpdateVinylInput!): Vinyl!
   createMaterial(input: CreateMaterialInput!): Material!
   createDesk(input: CreateDeskInput!): Desk!
 }
@@ -247,13 +252,33 @@ input LoginUserInput {
 
 input CreateVinylInput {
   title: String!
+  subtitle: String
   description: String!
   image: String
   referral_url: String
-  price: Float!
+  priceEur: Float
+  priceUSD: Float
+  label: String
+  genre: String
   seller: String!
   author: String!
   featured: Boolean = false
+}
+
+input UpdateVinylInput {
+  _id: ID!
+  title: String
+  subtitle: String
+  description: String
+  image: String
+  referral_url: String
+  priceEur: Float
+  priceUSD: Float
+  label: String
+  genre: String
+  seller: String
+  author: String
+  featured: Boolean = true
 }
 
 input CreateMaterialInput {
