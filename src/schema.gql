@@ -94,6 +94,7 @@ type Vinyl {
   subtitle: String
   description: String!
   image: String
+  imageB: String
   referral_url: String
   priceEur: Float
   priceUSD: Float
@@ -102,6 +103,7 @@ type Vinyl {
   seller: String!
   author: String!
   featured: Boolean!
+  slug: String!
 }
 
 """
@@ -121,6 +123,7 @@ type Material {
   seller: String!
   author: String!
   featured: Boolean!
+  slug: String!
 }
 
 type Desk {
@@ -135,6 +138,7 @@ type Desk {
   seller: String!
   author: String!
   featured: Boolean!
+  slug: String!
 }
 
 type Query {
@@ -255,6 +259,7 @@ input CreateVinylInput {
   subtitle: String
   description: String!
   image: String
+  imageB: String
   referral_url: String
   priceEur: Float
   priceUSD: Float
@@ -263,6 +268,7 @@ input CreateVinylInput {
   seller: String!
   author: String!
   featured: Boolean = false
+  slug: String = "vinyl"
 }
 
 input UpdateVinylInput {
@@ -271,6 +277,7 @@ input UpdateVinylInput {
   subtitle: String
   description: String
   image: String
+  imageB: String
   referral_url: String
   priceEur: Float
   priceUSD: Float
@@ -279,6 +286,7 @@ input UpdateVinylInput {
   seller: String
   author: String
   featured: Boolean = true
+  slug: String = "vinyl"
 }
 
 input CreateMaterialInput {
@@ -290,6 +298,7 @@ input CreateMaterialInput {
   seller: String!
   author: String!
   featured: Boolean = false
+  slug: String = "hifi"
 }
 
 input CreateDeskInput {
@@ -301,4 +310,5 @@ input CreateDeskInput {
   seller: String!
   author: String!
   featured: Boolean = false
+  slug: String = "desk"
 }

@@ -25,4 +25,7 @@ export class CreateMaterialInput {
 
   @Field({ defaultValue: false })
   featured: boolean;
+
+  @Field({ defaultValue: 'hifi' })
+  slug: string;
 }

@@ -36,6 +36,10 @@ export class Desk extends AbstractDocument {
   @Prop({ default: false })
   @Field({ defaultValue: false })
   featured: boolean;
+
+  @Prop({ default: 'desk' })
+  @Field({ defaultValue: false })
+  slug: string;
 }
 
 export const DeskSchema = SchemaFactory.createForClass(Desk);

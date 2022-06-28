@@ -15,6 +15,9 @@ export class CreateVinylInput {
   image: string;
 
   @Field({ nullable: true })
+  imageB: string;
+
+  @Field({ nullable: true })
   referral_url: string;
 
   @Field(() => Float, { nullable: true })
@@ -37,4 +40,7 @@ export class CreateVinylInput {
 
   @Field({ defaultValue: false })
   featured: boolean;
+
+  @Field({ defaultValue: 'vinyl' })
+  slug: string;
 }

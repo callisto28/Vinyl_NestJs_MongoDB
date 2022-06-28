@@ -25,4 +25,7 @@ export class CreateDeskInput {
 
   @Field({ defaultValue: false })
   featured: boolean;
+
+  @Field({ defaultValue: 'desk' })
+  slug: string;
 }

@@ -23,6 +23,10 @@ export class Vinyl extends AbstractDocument {
 
   @Prop({ required: false })
   @Field({ nullable: true })
+  imageB: string;
+
+  @Prop({ required: false })
+  @Field({ nullable: true })
   referral_url: string;
 
   @Prop({ required: false })
@@ -52,6 +56,10 @@ export class Vinyl extends AbstractDocument {
   @Prop({ default: false })
   @Field({ defaultValue: true })
   featured: boolean;
+
+  @Prop({ default: 'vinyl' })
+  @Field({ defaultValue: false })
+  slug: string;
 }
 
 export const VinylSchema = SchemaFactory.createForClass(Vinyl);

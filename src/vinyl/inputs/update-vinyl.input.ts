@@ -13,6 +13,8 @@ export class UpdateVinylInput {
   @Field({ nullable: true })
   image: string;
   @Field({ nullable: true })
+  imageB: string;
+  @Field({ nullable: true })
   referral_url: string;
   @Field(() => Float, { nullable: true })
   priceEur: number;
@@ -28,4 +30,6 @@ export class UpdateVinylInput {
   author: string;
   @Field({ defaultValue: true })
   featured: boolean;
+  @Field({ defaultValue: 'vinyl' })
+  slug: string;
 }

@@ -37,6 +37,10 @@ export class Material extends AbstractDocument {
   @Prop({ default: false })
   @Field({ defaultValue: false })
   featured: boolean;
+
+  @Prop({ default: 'hifi' })
+  @Field({ defaultValue: false })
+  slug: string;
 }
 
 export const MaterialSchema = SchemaFactory.createForClass(Material);
