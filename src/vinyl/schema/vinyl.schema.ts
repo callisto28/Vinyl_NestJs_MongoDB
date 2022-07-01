@@ -11,6 +11,10 @@ export class Vinyl extends AbstractDocument {
 
   @Prop({ required: false })
   @Field({ nullable: true })
+  artiste: string;
+
+  @Prop({ required: false })
+  @Field({ nullable: true })
   subtitle: string;
 
   @Prop()
@@ -29,11 +33,11 @@ export class Vinyl extends AbstractDocument {
   @Field({ nullable: true })
   referral_url: string;
 
-  @Prop({ required: false })
+  @Prop({ required: false, default: 0 })
   @Field(() => Float, { nullable: true })
   priceEur: number;
 
-  @Prop({ required: false })
+  @Prop({ required: false, default: 0 })
   @Field(() => Float, { nullable: true })
   priceUSD: number;
 

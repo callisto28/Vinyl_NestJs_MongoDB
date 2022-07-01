@@ -91,6 +91,7 @@ type Vinyl {
   createdAt: Timestamp!
   updatedAt: Timestamp!
   title: String!
+  artiste: String
   subtitle: String
   description: String!
   image: String
@@ -256,6 +257,7 @@ input LoginUserInput {
 
 input CreateVinylInput {
   title: String!
+  artiste: String
   subtitle: String
   description: String!
   image: String
@@ -274,6 +276,7 @@ input CreateVinylInput {
 input UpdateVinylInput {
   _id: ID!
   title: String
+  artiste: String
   subtitle: String
   description: String
   image: String

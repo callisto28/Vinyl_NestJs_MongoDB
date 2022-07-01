@@ -7,6 +7,8 @@ export class UpdateVinylInput {
   @Field({ nullable: true })
   title: string;
   @Field({ nullable: true })
+  artiste: string;
+  @Field({ nullable: true })
   subtitle: string;
   @Field({ nullable: true })
   description: string;

@@ -6,6 +6,9 @@ export class CreateVinylInput {
   title: string;
 
   @Field({ nullable: true })
+  artiste: string;
+
+  @Field({ nullable: true })
   subtitle: string;
 
   @Field()
