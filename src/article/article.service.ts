@@ -15,7 +15,7 @@ export class ArticleService {
   }
 
   async findAll(): Promise<IArticle[]> {
-    return await this.articleModel.find().exec();
+    return await this.articleModel.find().sort({ createdAt: 'desc' }).exec();
   }
 
   async findOne(id: string): Promise<IArticle> {

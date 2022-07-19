@@ -14,7 +14,7 @@ export class PlansService {
   }
 
   async findAll(): Promise<IPlan[]> {
-    return await this.planModel.find().exec();
+    return await this.planModel.find().sort({ createdAt: 'desc' }).exec();
   }
 
   async findOne(id: string): Promise<IPlan> {

@@ -18,6 +18,8 @@ export class DeskService {
   }
 
   public async findbyFeatured() {
-    return this.deskModel.find({ featured: true }, undefined, { lean: true });
+    return this.deskModel
+      .find({ featured: true }, undefined, { lean: true })
+      .sort({ createdAt: 'desc' });
   }
 }

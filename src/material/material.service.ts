@@ -20,8 +20,10 @@ export class MaterialService {
   }
 
   public async findbyFeatured() {
-    return this.materialModel.find({ featured: true }, undefined, {
-      lean: true,
-    });
+    return this.materialModel
+      .find({ featured: true }, undefined, {
+        lean: true,
+      })
+      .sort({ createdAt: 'desc' });
   }
 }

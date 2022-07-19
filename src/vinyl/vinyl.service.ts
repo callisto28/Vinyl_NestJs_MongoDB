@@ -18,7 +18,9 @@ export class VinylService {
   }
 
   public async findbyFeatured() {
-    return this.vinylModel.find({ featured: true }, undefined, { lean: true });
+    return this.vinylModel
+      .find({ featured: true }, undefined, { lean: true })
+      .sort({ createdAt: 'desc' });
   }
 
   public async update(id: string, updateVinylInput: Vinyl) {
