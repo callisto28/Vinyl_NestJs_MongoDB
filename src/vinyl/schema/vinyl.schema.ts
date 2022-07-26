@@ -33,6 +33,10 @@ export class Vinyl extends AbstractDocument {
   @Field({ nullable: true })
   referral_url: string;
 
+  @Prop({ required: false })
+  @Field({ nullable: true })
+  spotify_url: string;
+
   @Prop({ required: false, default: 0 })
   @Field(() => Float, { nullable: true })
   priceEur: number;

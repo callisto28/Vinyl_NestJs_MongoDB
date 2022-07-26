@@ -23,6 +23,9 @@ export class CreateVinylInput {
   @Field({ nullable: true })
   referral_url: string;
 
+  @Field({ nullable: true })
+  spotify_url: string;
+
   @Field(() => Float, { nullable: true })
   priceEur: number;
 

@@ -97,6 +97,7 @@ type Vinyl {
   image: String
   imageB: String
   referral_url: String
+  spotify_url: String
   priceEur: Float
   priceUSD: Float
   label: String
@@ -263,6 +264,7 @@ input CreateVinylInput {
   image: String
   imageB: String
   referral_url: String
+  spotify_url: String
   priceEur: Float
   priceUSD: Float
   label: String
@@ -282,6 +284,7 @@ input UpdateVinylInput {
   image: String
   imageB: String
   referral_url: String
+  spotify_url: String
   priceEur: Float
   priceUSD: Float
   label: String
