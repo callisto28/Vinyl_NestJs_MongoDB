@@ -38,6 +38,9 @@ export class CreateVinylInput {
   @Field({ nullable: true })
   genre: string;
 
+  @Field({ nullable: true })
+  release: string;
+
   @Field()
   seller: string;
 

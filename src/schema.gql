@@ -102,6 +102,7 @@ type Vinyl {
   priceUSD: Float
   label: String
   genre: String
+  release: String
   seller: String!
   author: String!
   featured: Boolean!
@@ -269,6 +270,7 @@ input CreateVinylInput {
   priceUSD: Float
   label: String
   genre: String
+  release: String
   seller: String!
   author: String!
   featured: Boolean = false
@@ -289,6 +291,7 @@ input UpdateVinylInput {
   priceUSD: Float
   label: String
   genre: String
+  release: String
   seller: String
   author: String
   featured: Boolean = true
