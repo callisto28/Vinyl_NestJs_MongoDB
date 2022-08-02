@@ -39,6 +39,9 @@ export class CreateVinylInput {
   genre: string;
 
   @Field({ nullable: true })
+  promo: string;
+
+  @Field({ nullable: true })
   release: string;
 
   @Field()

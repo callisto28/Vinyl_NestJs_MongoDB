@@ -29,6 +29,8 @@ export class UpdateVinylInput {
   @Field({ nullable: true })
   genre: string;
   @Field({ nullable: true })
+  promo: string;
+  @Field({ nullable: true })
   release: string;
   @Field({ nullable: true })
   seller: string;

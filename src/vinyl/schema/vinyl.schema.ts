@@ -55,6 +55,10 @@ export class Vinyl extends AbstractDocument {
 
   @Prop({ required: false })
   @Field({ nullable: true })
+  promo: string;
+
+  @Prop({ required: false })
+  @Field({ nullable: true })
   release: string;
 
   @Prop()

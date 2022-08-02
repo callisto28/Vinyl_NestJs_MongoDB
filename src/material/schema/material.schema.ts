@@ -26,13 +26,17 @@ export class Material extends AbstractDocument {
   @Field(() => Float)
   price: number;
 
-  @Prop()
-  @Field()
+  @Prop({ required: false })
+  @Field({ nullable: true })
   seller: string;
 
   @Prop()
   @Field()
   author: string;
+
+  @Prop({ required: false })
+  @Field({ nullable: true })
+  brand: string;
 
   @Prop({ default: false })
   @Field({ defaultValue: false })

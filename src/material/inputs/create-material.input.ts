@@ -17,8 +17,11 @@ export class CreateMaterialInput {
   @Field(() => Float)
   price: number;
 
-  @Field()
+  @Field({ nullable: true })
   seller: string;
+
+  @Field({ nullable: true })
+  brand: string;
 
   @Field()
   author: string;
