@@ -1,5 +1,6 @@
 import { CreateArticleInput } from './create-article.input';
 import { InputType, Field, ID, PartialType } from '@nestjs/graphql';
+//import { IsNotEmpty, IsString, IsOptional } from 'class-validator';
 
 @InputType()
 export class UpdateArticleInput extends PartialType(CreateArticleInput) {
